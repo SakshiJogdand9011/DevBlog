@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(to right, #4F46E5 1px, transparent 1px),
+      linear-gradient(to bottom, #4F46E5 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-gray-50;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-2 bg-indigo-600 text-white rounded-lg font-medium
+    hover:bg-indigo-700 transition-colors duration-200
+    focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2
+    shadow-lg shadow-indigo-200;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-2 bg-gray-200 text-gray-700 rounded-lg font-medium
+    hover:bg-gray-300 transition-colors duration-200
+    focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
+  }
+}
